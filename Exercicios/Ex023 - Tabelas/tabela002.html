@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabelas</title>
+    <style>
+        body{font-family: Arial, Helvetica, sans-serif;}
+
+        table{width: 500px;
+        border-collapse: collapse;
+        position: relative;}
+
+        td,th{border: 1px solid black;
+        padding: 10px;}
+
+        thead,tfoot{background-color: gray;
+        color: white;}
+            /*Efeito Cabeçalho fixo
+            para fazer precisamos colocar o Table em position: relative e o Thead > tr > th em position stick e top 0
+            */
+        thead > tr > th{position: sticky;
+        top: 0;
+        background-color: gray;
+        color: white;}
+            /*O efeito zebrado se faz com a pseudo classe :nth-child(2n) o valor que você coloca na classe pode ser numeros seguidos de n ou par ou impar em inglês (odd = impar & pair = par)*/
+        tbody tr:nth-child(2n){background-color: lightgray;
+
+        }
+
+        td.num{text-align: right;}
+
+        caption{font-size: 1.5em;
+        font-weight: bold;
+        background-color: lightgray;
+        color: black;}
+
+    </style>
+</head>
+<!--ANATOMIA PARA TABELAS GRANDES
+    TABLE
+        CAPTION
+        THEAD
+            TR, TD, TH
+        TBODY
+            TR, TD, TH
+        TFOOT
+            TR, TD, TH
+
+-->
+<body>
+    <h1>Uso de tabelas grandes</h1>
+
+    <table>
+        <caption>População das Unidades Federativas.</caption>
+        <thead>
+            <!--scope
+Este atributo define as células a que o cabeçalho (definido no elemento <th>) se relaciona.
+Possíveis valores:
+row: O cabeçalho se relaciona com todas as células da linha a que pertence.
+col: O cabeçalho se relaciona com todas as células da coluna a que pertence.
+rowgroup: O cabeçalho pertence a um grupo de linhas e se relaciona com todas as suas células. Essas células podem ser colocadas à direita ou à esquerda do cabeçalho, dependendo do valor do atributo dir no elemento <table>.
+colgroup: O cabeçalho pertence a um grupo de colgroup e se relaciona com todas as suas células.
+auto
+O valor padrão quando este atributo não é especificado é auto.-->
+            <tr>
+                <th scope="col">Estado</th>
+                <th scope="col" style="width: 50px;">População</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Bandeira_do_estado_de_S%C3%A3o_Paulo.svg/22px-Bandeira_do_estado_de_S%C3%A3o_Paulo.svg.png" alt="São Paulo"> São Paulo</td>
+                <td class="num">45 919 049</td>
+            </tr>
+            <tr>
+                <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Bandeira_de_Minas_Gerais.svg/20px-Bandeira_de_Minas_Gerais.svg.png" alt="Minas Gerais"> Minas Gerais</td>
+                <td class="num">21 168 791</td>
+            </tr>
+            <tr>
+                <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Bandeira_do_estado_do_Rio_de_Janeiro.svg/20px-Bandeira_do_estado_do_Rio_de_Janeiro.svg.png" alt="Rio de Janeiro"> Rio de Janeiro</td>
+                <td class="num">17 264 943</td>
+            </tr>
+            <tr>
+                <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Bandeira_da_Bahia.svg/20px-Bandeira_da_Bahia.svg.png" alt="Bahia">Bahia</td>
+                <td class="num">14 985 284</td>
+            </tr>
+            <tr>
+                <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Bandeira_do_Paran%C3%A1.svg/20px-Bandeira_do_Paran%C3%A1.svg.png" alt="Paraná"> Paraná</td>
+                <td class="num">11 597 484</td>
+            </tr>
+            <tr>
+                <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Bandeira_do_Rio_Grande_do_Sul.svg/20px-Bandeira_do_Rio_Grande_do_Sul.svg.png" alt="Rio Grande do Sul"> Rio Grande do Sul</td>
+                <td class="num">11 466 630</td>
+            </tr>
+            <tr>
+                <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Bandeira_de_Pernambuco.svg/20px-Bandeira_de_Pernambuco.svg.png" alt="Pernambuco"> Pernambuco</td>
+                <td class="num">9 674 793</td>
+            </tr>
+            <tr>
+                <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Bandeira_do_Cear%C3%A1.svg/20px-Bandeira_do_Cear%C3%A1.svg.png" alt="Ceará"> Ceará</td>
+                <td class="num">9 240 580</td>
+            </tr>
+            <tr>
+                <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Bandeira_do_Par%C3%A1.svg/20px-Bandeira_do_Par%C3%A1.svg.png" alt="Pará"> Pará</td>
+                <td class="num">8 777 124</td>
+            </tr>
+            <tr>
+                <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Bandeira_de_Santa_Catarina.svg/20px-Bandeira_de_Santa_Catarina.svg.png" alt="Santa Catarina"> Santa Catarina</td>
+                <td class="num">7 338 473</td>
+            </tr>
+            <tr>
+                <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Flag_of_Goi%C3%A1s.svg/20px-Flag_of_Goi%C3%A1s.svg.png" alt="Goiás"> Goiás</td>
+                <td class="num">7 206 589</td>
+            </tr>
+            <tr>
+                <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Bandeira_do_Maranh%C3%A3o.svg/20px-Bandeira_do_Maranh%C3%A3o.svg.png" alt="Maranhão"> Maranhão</td>
+                <td class="num">7 153 262</td>
+            </tr>
+            <tr>
+                <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Bandeira_do_Amazonas.svg/20px-Bandeira_do_Amazonas.svg.png" alt="Amazonas"> Amazonas</td>
+                <td class="num">4 269 995</td>
+            </tr>
+            <tr>
+                <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Bandeira_do_Esp%C3%ADrito_Santo.svg/20px-Bandeira_do_Esp%C3%ADrito_Santo.svg.png  " alt="Espírito Santo"> Espírito Santo</td>
+                <td class="num">4 108 508</td>
+            </tr>
+            <tr>
+                <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Bandeira_da_Para%C3%ADba.svg/20px-Bandeira_da_Para%C3%ADba.svg.png" alt="Paraíba"> Paraíba</td>
+                <td class="num">4 059 905</td>
+            </tr>
+            <tr>
+                <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Bandeira_de_Mato_Grosso.svg/20px-Bandeira_de_Mato_Grosso.svg.png" alt="Mato Grosso"> Mato Grosso</td>
+                <td class="num">3 567 234</td>
+            </tr>
+            <tr>
+                <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Bandeira_do_Rio_Grande_do_Norte.svg/20px-Bandeira_do_Rio_Grande_do_Norte.svg.png" alt="Rio Grande do Norte">Rio Grande do Norte</td>
+                <td class="num">3 560 903</td>
+            </tr>
+            <tr>
+                <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Bandeira_de_Alagoas.svg/20px-Bandeira_de_Alagoas.svg.png" alt="Alagoas">Alagoas</td>
+                <td class="num">3 365 351</td>
+            </tr>
+            <tr>
+                <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Bandeira_do_Piau%C3%AD.svg/20px-Bandeira_do_Piau%C3%AD.svg.png" alt="Piauí">Piauí</td>
+                <td class="num">3 289 290</td>
+            </tr>
+            <tr>
+                <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Bandeira_do_Distrito_Federal_%28Brasil%29.svg/20px-Bandeira_do_Distrito_Federal_%28Brasil%29.svg.png" alt="Distrito Federal"> Distrito Federal</td>
+                <td class="num">3 094 325</td>
+            </tr>
+            <tr>
+                <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Bandeira_de_Mato_Grosso_do_Sul.svg/20px-Bandeira_de_Mato_Grosso_do_Sul.svg.png" alt="Mato Grosso do Sul"> Mato Grosso do Sul</td>
+                <td class="num">2 839 188</td>
+            </tr>
+            <tr>
+                <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Bandeira_de_Sergipe.svg/20px-Bandeira_de_Sergipe.svg.png" alt="Sergipe">  Sergipe</td>
+                <td class="num">2 338 474</td>
+            </tr>
+            <tr>
+                <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Bandeira_de_Rond%C3%B4nia.svg/20px-Bandeira_de_Rond%C3%B4nia.svg.png" alt="Rondônia"> Rondônia</td>
+                <td class="num">1 815 278</td>
+            </tr>
+            <tr>
+                <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Bandeira_do_Tocantins.svg/20px-Bandeira_do_Tocantins.svg.png" alt="Tocantins"> Tocantins</td>
+                <td class="num">1 607 363</td>
+            </tr>
+            <tr>
+                <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Bandeira_do_Acre.svg/20px-Bandeira_do_Acre.svg.png" alt="Acre"> Acre</td>
+                <td class="num">906 876</td>
+            </tr>
+            <tr>
+                <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Bandeira_do_Amap%C3%A1.svg/20px-Bandeira_do_Amap%C3%A1.svg.png" alt="Amapá"> Amapá</td>
+                <td class="num">877 613</td>
+            </tr>
+            <tr>
+                <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Bandeira_de_Roraima.svg/20px-Bandeira_de_Roraima.svg.png" alt="Roraima"> Roraima</td>
+                <td class="num">652 713</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <th scope="row">Total de Habitantes</th>
+            <td class="num"><strong>206.081.432</strong></td>
+        </tfoot>
+    </table>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae exercitationem, necessitatibus quibusdam minima mollitia molestiae asperiores repellendus, numquam recusandae accusamus accusantium iusto dolorum. Commodi neque, temporibus esse illum qui similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio facilis magni voluptatibus culpa illum debitis officia tenetur, quaerat iste, distinctio modi dolorem blanditiis alias doloremque, quae eius numquam dolore facere! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore asperiores laboriosam, quas blanditiis accusamus ullam excepturi porro assumenda consectetur odio perspiciatis dicta eaque totam exercitationem beatae ipsam quasi aliquid repellat. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis similique enim porro dolorem nisi facere quos! Nobis quasi ullam voluptates illum eum itaque dolores saepe delectus, repellendus iste distinctio asperiores! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto praesentium saepe, fugiat molestias dolor distinctio autem reiciendis quam esse eaque velit voluptates ea ipsum natus eum iste expedita totam rem! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti architecto, veniam accusantium fuga soluta repellat excepturi rem. Temporibus, debitis ratione, dignissimos ut placeat quis sit soluta doloribus aliquid, veritatis accusantium. Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci sit perferendis magni, libero obcaecati beatae necessitatibus deserunt sapiente vitae eligendi eum doloribus veritatis ut, expedita mollitia provident aut aspernatur officiis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi doloremque ratione porro quis nostrum deleniti, culpa amet voluptas! Eos ipsa perspiciatis nisi ad tempora natus iure qui alias consequatur ullam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias tempore a facilis inventore eaque! Saepe, necessitatibus maiores? Nostrum, voluptates? Optio nobis dolorem blanditiis quaerat voluptas! Ipsa, doloremque eos. Enim, natus.
+    </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae exercitationem, necessitatibus quibusdam minima mollitia molestiae asperiores repellendus, numquam recusandae accusamus accusantium iusto dolorum. Commodi neque, temporibus esse illum qui similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio facilis magni voluptatibus culpa illum debitis officia tenetur, quaerat iste, distinctio modi dolorem blanditiis alias doloremque, quae eius numquam dolore facere! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore asperiores laboriosam, quas blanditiis accusamus ullam excepturi porro assumenda consectetur odio perspiciatis dicta eaque totam exercitationem beatae ipsam quasi aliquid repellat. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis similique enim porro dolorem nisi facere quos! Nobis quasi ullam voluptates illum eum itaque dolores saepe delectus, repellendus iste distinctio asperiores! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto praesentium saepe, fugiat molestias dolor distinctio autem reiciendis quam esse eaque velit voluptates ea ipsum natus eum iste expedita totam rem! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti architecto, veniam accusantium fuga soluta repellat excepturi rem. Temporibus, debitis ratione, dignissimos ut placeat quis sit soluta doloribus aliquid, veritatis accusantium. Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci sit perferendis magni, libero obcaecati beatae necessitatibus deserunt sapiente vitae eligendi eum doloribus veritatis ut, expedita mollitia provident aut aspernatur officiis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi doloremque ratione porro quis nostrum deleniti, culpa amet voluptas! Eos ipsa perspiciatis nisi ad tempora natus iure qui alias consequatur ullam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias tempore a facilis inventore eaque! Saepe, necessitatibus maiores? Nostrum, voluptates? Optio nobis dolorem blanditiis quaerat voluptas! Ipsa, doloremque eos. Enim, natus.
+    </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae exercitationem, necessitatibus quibusdam minima mollitia molestiae asperiores repellendus, numquam recusandae accusamus accusantium iusto dolorum. Commodi neque, temporibus esse illum qui similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio facilis magni voluptatibus culpa illum debitis officia tenetur, quaerat iste, distinctio modi dolorem blanditiis alias doloremque, quae eius numquam dolore facere! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore asperiores laboriosam, quas blanditiis accusamus ullam excepturi porro assumenda consectetur odio perspiciatis dicta eaque totam exercitationem beatae ipsam quasi aliquid repellat. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis similique enim porro dolorem nisi facere quos! Nobis quasi ullam voluptates illum eum itaque dolores saepe delectus, repellendus iste distinctio asperiores! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto praesentium saepe, fugiat molestias dolor distinctio autem reiciendis quam esse eaque velit voluptates ea ipsum natus eum iste expedita totam rem! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti architecto, veniam accusantium fuga soluta repellat excepturi rem. Temporibus, debitis ratione, dignissimos ut placeat quis sit soluta doloribus aliquid, veritatis accusantium. Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci sit perferendis magni, libero obcaecati beatae necessitatibus deserunt sapiente vitae eligendi eum doloribus veritatis ut, expedita mollitia provident aut aspernatur officiis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi doloremque ratione porro quis nostrum deleniti, culpa amet voluptas! Eos ipsa perspiciatis nisi ad tempora natus iure qui alias consequatur ullam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias tempore a facilis inventore eaque! Saepe, necessitatibus maiores? Nostrum, voluptates? Optio nobis dolorem blanditiis quaerat voluptas! Ipsa, doloremque eos. Enim, natus.
+    </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae exercitationem, necessitatibus quibusdam minima mollitia molestiae asperiores repellendus, numquam recusandae accusamus accusantium iusto dolorum. Commodi neque, temporibus esse illum qui similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio facilis magni voluptatibus culpa illum debitis officia tenetur, quaerat iste, distinctio modi dolorem blanditiis alias doloremque, quae eius numquam dolore facere! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore asperiores laboriosam, quas blanditiis accusamus ullam excepturi porro assumenda consectetur odio perspiciatis dicta eaque totam exercitationem beatae ipsam quasi aliquid repellat. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis similique enim porro dolorem nisi facere quos! Nobis quasi ullam voluptates illum eum itaque dolores saepe delectus, repellendus iste distinctio asperiores! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto praesentium saepe, fugiat molestias dolor distinctio autem reiciendis quam esse eaque velit voluptates ea ipsum natus eum iste expedita totam rem! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti architecto, veniam accusantium fuga soluta repellat excepturi rem. Temporibus, debitis ratione, dignissimos ut placeat quis sit soluta doloribus aliquid, veritatis accusantium. Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci sit perferendis magni, libero obcaecati beatae necessitatibus deserunt sapiente vitae eligendi eum doloribus veritatis ut, expedita mollitia provident aut aspernatur officiis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi doloremque ratione porro quis nostrum deleniti, culpa amet voluptas! Eos ipsa perspiciatis nisi ad tempora natus iure qui alias consequatur ullam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias tempore a facilis inventore eaque! Saepe, necessitatibus maiores? Nostrum, voluptates? Optio nobis dolorem blanditiis quaerat voluptas! Ipsa, doloremque eos. Enim, natus.
+    </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae exercitationem, necessitatibus quibusdam minima mollitia molestiae asperiores repellendus, numquam recusandae accusamus accusantium iusto dolorum. Commodi neque, temporibus esse illum qui similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio facilis magni voluptatibus culpa illum debitis officia tenetur, quaerat iste, distinctio modi dolorem blanditiis alias doloremque, quae eius numquam dolore facere! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore asperiores laboriosam, quas blanditiis accusamus ullam excepturi porro assumenda consectetur odio perspiciatis dicta eaque totam exercitationem beatae ipsam quasi aliquid repellat. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis similique enim porro dolorem nisi facere quos! Nobis quasi ullam voluptates illum eum itaque dolores saepe delectus, repellendus iste distinctio asperiores! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto praesentium saepe, fugiat molestias dolor distinctio autem reiciendis quam esse eaque velit voluptates ea ipsum natus eum iste expedita totam rem! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti architecto, veniam accusantium fuga soluta repellat excepturi rem. Temporibus, debitis ratione, dignissimos ut placeat quis sit soluta doloribus aliquid, veritatis accusantium. Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci sit perferendis magni, libero obcaecati beatae necessitatibus deserunt sapiente vitae eligendi eum doloribus veritatis ut, expedita mollitia provident aut aspernatur officiis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi doloremque ratione porro quis nostrum deleniti, culpa amet voluptas! Eos ipsa perspiciatis nisi ad tempora natus iure qui alias consequatur ullam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias tempore a facilis inventore eaque! Saepe, necessitatibus maiores? Nostrum, voluptates? Optio nobis dolorem blanditiis quaerat voluptas! Ipsa, doloremque eos. Enim, natus.
+    </p>
+</body>
+</html>
